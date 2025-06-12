@@ -1,5 +1,7 @@
+import LinkedList.Cell;
+
 public class Main {
     public static void main(String[] args) {
-        Celula<Integer> celula = new Celula<>(10);
+        Cell<Integer> cell = new Cell<>(10);
     }
 }
