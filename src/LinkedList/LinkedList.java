@@ -2,10 +2,6 @@ package LinkedList;
 
 public class LinkedList<T> {
     private Cell<T> first;
-    private Cell<T> last;
-    public LinkedList(Cell<T> cell){
-        first = cell;
-    }
     public LinkedList()
     {
         first = null;
@@ -21,16 +17,10 @@ public class LinkedList<T> {
     private void insertLast(Cell<T> cell)
     {
         Cell aux = first;
-//        try {
-//            aux.getNext();
-//        }catch (NullPointerException e)
-//        {
-//            System.err.println("This LinkedList is unitary, cell.getNext() = null");
-//        }
-        do {
+        while(aux.getNext() != null){
             aux = aux.getNext();
-        }while(aux.getNext() != null);
-        aux = cell;
+        };
+        aux.setNext(cell);
     }
     public void insertLast(T value)
     {

@@ -17,7 +17,8 @@ public class Cell<T>{
         this.next = null;
     }
 
-    public Cell getNext() throws NullPointerException{
+    public Cell getNext() //throws NullPointerException
+    {
         return next;
     }
 
