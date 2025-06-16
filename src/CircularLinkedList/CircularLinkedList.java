@@ -1,34 +1,33 @@
 package CircularLinkedList;
 
+import java.util.HashMap;
+
 public class CircularLinkedList<T> {
-    private Cell<T> first;
+    private Cell<T> tail;
+    private Cell<T> head;
     public CircularLinkedList()
     {
-        first = null;
-    }
-    public void insertFirst(T value){
-        this.inserirNoInicio(new Cell<T>(value));
-    }
-    private void inserirNoInicio(Cell<T> cell){
-        cell.next = first;
-        first = cell;
+        tail = null;
+        head = null;
     }
 
-    private void insertLast(Cell<T> cell)
-    {
-        Cell aux = first;
-        while(aux.getNext() != null){
-            aux = aux.getNext();
-        };
-        aux.setNext(cell);
+    public void insertFirst(T value){
+        this.insertFirst(new Cell<T>(value));
     }
-    public void insertLast(T value)
-    {
-        insertLast(new Cell<T>(value));
+    private void insertFirst(Cell<T> cell){
+        if(tail == null)
+        {
+            tail = cell;
+            tail.setNext(cell);
+        }
+
+        cell.next = tail.getNext();
+        tail.setNext(cell);
     }
+
     public boolean search(T value)
     {
-        Cell aux = first;
+        Cell aux = tail.getNext();
         while(aux != null)
         {
             if(aux.getValue() == value) return true;
@@ -41,7 +40,7 @@ public class CircularLinkedList<T> {
     {
         StringBuilder sb = new StringBuilder();
         sb.append("LinkedList{");
-        Cell aux = first;
+        Cell aux = tail.getNext();
         while(aux != null)
         {
             sb.append(aux.getValue()+", ");
