@@ -1,15 +1,15 @@
-package LinkedList;
+package CircularLinkedList;
 
-public class LinkedList<T> {
+public class CircularLinkedList<T> {
     private Cell<T> first;
-    public LinkedList()
+    public CircularLinkedList()
     {
         first = null;
     }
     public void insertFirst(T value){
-        this.insertFirst(new Cell<T>(value));
+        this.inserirNoInicio(new Cell<T>(value));
     }
-    private void insertFirst(Cell<T> cell){
+    private void inserirNoInicio(Cell<T> cell){
         cell.next = first;
         first = cell;
     }
