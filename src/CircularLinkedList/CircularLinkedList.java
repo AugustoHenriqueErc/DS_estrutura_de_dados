@@ -1,7 +1,5 @@
 package CircularLinkedList;
 
-import java.util.HashMap;
-
 public class CircularLinkedList<T> {
     private Cell<T> tail;
     private Cell<T> head;
@@ -15,19 +13,43 @@ public class CircularLinkedList<T> {
         this.insertFirst(new Cell<T>(value));
     }
     private void insertFirst(Cell<T> cell){
-        if(tail == null)
+        if(tail == null||head == null)
         {
             tail = cell;
+            head = cell;
             tail.setNext(cell);
         }
+        else {
+            cell.setNext(head);
+            head = cell;
+            tail.setNext(cell);
+        }
+    }
 
-        cell.next = tail.getNext();
-        tail.setNext(cell);
+    public void insertEnd(T value)
+    {
+        this.insertEnd(new Cell<T>(value));
+    }
+
+    private void insertEnd(Cell<T> cell)
+    {
+        if((tail == null||head == null))
+        {
+            tail = cell;
+            head = cell;
+            tail.setNext(cell);
+        }
+        else
+        {
+            tail.setNext(cell);
+            cell.setNext(head);
+            tail = cell;
+        }
     }
 
     public boolean search(T value)
     {
-        Cell aux = tail.getNext();
+        Cell<T> aux = tail.getNext();
         while(aux != null)
         {
             if(aux.getValue() == value) return true;
@@ -38,21 +60,14 @@ public class CircularLinkedList<T> {
     @Override
     public String toString()
     {
+        Cell<T> aux = head;
         StringBuilder sb = new StringBuilder();
-        sb.append("LinkedList{");
-        Cell aux = tail.getNext();
-        while(aux != null)
+        do
         {
-            sb.append(aux.getValue()+", ");
+            sb.append(aux.getValue()).append(", ");
             aux = aux.getNext();
-        }
-        sb.append("}");
+        }while (aux != head);
         return sb.toString();
-    }
-
-    public void print()
-    {
-        System.out.println(this.toString());
     }
 
 }

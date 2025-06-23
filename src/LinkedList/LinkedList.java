@@ -1,17 +1,17 @@
 package LinkedList;
 
 public class LinkedList<T> {
-    private Cell<T> tail;
+    private Cell<T> first;
     public LinkedList()
     {
-        tail = null;
+        first = null;
     }
     public void insertFirst(T value){
         this.insertFirst(new Cell<T>(value));
     }
     private void insertFirst(Cell<T> cell){
-        cell.next = tail.getNext() ;
-        tail.setNext(cell);
+        cell.next = first.getNext() ;
+        first.setNext(cell);
     }
 
     private void insertLast(Cell<T> cell)
