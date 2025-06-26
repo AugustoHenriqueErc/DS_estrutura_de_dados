@@ -46,15 +46,19 @@ public class CircularLinkedList<T> {
             tail = cell;
         }
     }
+    public void remove(T value)
+    {
 
-    public boolean search(T value)
+    }
+
+    public Cell<T> search(T value)
     {
         Cell<T> aux = tail.getNext();
         while(aux != null)
         {
-            if(aux.getValue() == value) return true;
+            if(aux.getValue() == value) return aux;
         }
-        return false;
+        return null;
     }
 
     @Override
