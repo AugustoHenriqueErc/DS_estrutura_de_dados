@@ -35,10 +35,10 @@ public class DoublyLinkedList<T>
     {
         StringBuilder sb = new StringBuilder();
         sb.append("LinkedList{");
-        Cell c = head;
+        Cell<T> c = head;
         do
         {
-            sb.append(c.getValue()+", ");
+            sb.append(c).append(", ");
             c = c.getNext();
         }while(c == null);
         sb.append(c.getValue()).append("}");
