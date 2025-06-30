@@ -18,7 +18,7 @@ public class DoublyLinkedList<T>
         else return false;
     }
 
-    public void insertFirst(T value)
+    public void insertHead(T value)
     {
         Cell<T> c = new Cell<>(value);
        if(isEmpty()) head = c;

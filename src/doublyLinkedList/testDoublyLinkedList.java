@@ -3,9 +3,9 @@ package doublyLinkedList;
 public class testDoublyLinkedList {
     public static void main(String[] args) {
         DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-        list.insertFirst(10);
-        list.insertFirst(5);
-        list.insertFirst(2);
+        list.insertHead(10);
+        list.insertHead(5);
+        list.insertHead(2);
         System.out.println(list);
     }
 }
