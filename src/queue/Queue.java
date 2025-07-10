@@ -1,4 +1,4 @@
-package Queue;
+package queue;
 
 public class Queue<T> {
     private Cell<T> head;
@@ -23,6 +23,8 @@ public class Queue<T> {
             head = cell;
         }
     }
+    public void remove() {
+    }
     @Override
     public String toString()
     {
@@ -33,6 +35,7 @@ public class Queue<T> {
             sb.append("Queue {");
             do{
                 sb.append(aux.getValue()).append(" ,");
+                aux = aux.getNext();
             }while (aux.getNext() != null);
             sb.append("}");
             return sb.toString();

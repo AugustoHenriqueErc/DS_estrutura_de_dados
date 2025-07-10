@@ -1,4 +1,4 @@
-package Stock;
+package stock;
 
 public class testStock {
     public static void main(String[] args) {

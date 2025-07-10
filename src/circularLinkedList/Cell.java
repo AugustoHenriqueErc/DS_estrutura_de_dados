@@ -1,8 +1,9 @@
-package LinkedList;
+package circularLinkedList;
 
 public class Cell<T>{
     T value;
     Cell<T> next;
+
     public void setValue(T value) {
         this.value = value;
     }
@@ -10,6 +11,7 @@ public class Cell<T>{
     public void setNext(Cell<T> next) {
         this.next = next;
     }
+
     public Cell(T value){
         this.value = value;
         this.next = null;

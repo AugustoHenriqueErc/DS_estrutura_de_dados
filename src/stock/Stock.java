@@ -1,4 +1,4 @@
-package Stock;
+package stock;
 
 public class Stock<T> {
     Cell<T> top;

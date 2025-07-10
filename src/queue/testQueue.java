@@ -1,4 +1,4 @@
-package Queue;
+package queue;
 
 public class testQueue {
     public static void main(String[] args) {

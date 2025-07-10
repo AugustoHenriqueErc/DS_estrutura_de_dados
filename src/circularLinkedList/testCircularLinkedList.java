@@ -1,4 +1,4 @@
-package CircularLinkedList;
+package circularLinkedList;
 
 public class testCircularLinkedList {
     public static void main(String[] args) {

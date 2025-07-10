@@ -1,4 +1,4 @@
-package CircularLinkedList;
+package circularLinkedList;
 
 public class CircularLinkedList<T> {
     private Cell<T> tail;
